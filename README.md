@@ -1,5 +1,8 @@
 # RaceDay – Part 1
 
+<img width="959" height="500" alt="image" src="https://github.com/user-attachments/assets/1e4b7c81-c7a7-48ce-a422-b13d62fcd660" />
+
+
 ## Project Overview
 
 RaceDay is a racing event management system designed to provide an organised way of managing racing events, races, and related information. 
