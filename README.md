@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-RaceDay is a racing event management system designed to provide an organised way of managing racing events, races, and related information.
+RaceDay is a racing event management system designed to provide an organised way of managing racing events, races, and related information. 
 
 Part 1 focuses on setting up the **backend API**, establishing the initial project structure, creating the database design, and preparing the project for development and containerisation.
 
