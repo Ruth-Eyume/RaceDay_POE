@@ -7,6 +7,7 @@ RaceDay is a racing event management system designed to provide an organised way
 Part 1 focuses on setting up the **backend API**, establishing the initial project structure, creating the database design, and preparing the project for development and containerisation.
  
 ## Technologies Used
+
 The following technologies are used in Part 1:
 
 * **C#**
