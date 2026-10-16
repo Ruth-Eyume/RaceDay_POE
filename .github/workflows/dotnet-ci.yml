@@ -1,4 +1,3 @@
-```yaml
 name: RaceDay API CI
 
 on:
@@ -76,4 +75,4 @@ jobs:
               --no-build \
               --no-restore
           done < projects.txt
-```
+
