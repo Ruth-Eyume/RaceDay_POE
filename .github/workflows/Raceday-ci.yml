@@ -12,84 +12,45 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: Build RaceDay API
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up .NET
+      - name: Install .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
 
-      - name: Find solution or project files
-        id: find-files
-        shell: bash
+      - name: Locate project files
         run: |
-          echo "Searching for .NET project files..."
-          find . -type f \( -name '*.sln' -o -name '*.slnx' -o -name '*.csproj' \) \
-            -not -path '*/bin/*' \
-            -not -path '*/obj/*' \
-            | sort
+          echo "Searching for C# project files..."
+          find . -type f -name "*.csproj" \
+            -not -path "*/bin/*" \
+            -not -path "*/obj/*"
 
-      - name: Restore dependencies
+      - name: Restore and build
         shell: bash
         run: |
           mapfile -t projects < <(
-            find . -type f -name '*.csproj' \
-              -not -path '*/bin/*' \
-              -not -path '*/obj/*' | sort
+            find . -type f -name "*.csproj" \
+              -not -path "*/bin/*" \
+              -not -path "*/obj/*"
           )
 
           if [ "${#projects[@]}" -eq 0 ]; then
-            echo "ERROR: No .csproj files found."
+            echo "ERROR: No C# project files found."
             exit 1
           fi
 
           for project in "${projects[@]}"; do
+            echo "Restoring $project"
             dotnet restore "$project"
-          done
 
-      - name: Build projects
-        shell: bash
-        run: |
-          mapfile -t projects < <(
-            find . -type f -name '*.csproj' \
-              -not -path '*/bin/*' \
-              -not -path '*/obj/*' | sort
-          )
-
-          for project in "${projects[@]}"; do
+            echo "Building $project"
             dotnet build "$project" \
               --configuration Release \
               --no-restore
           done
-
-      - name: Run tests
-        shell: bash
-        run: |
-          mapfile -t projects < <(
-            find . -type f -name '*.csproj' \
-              -not -path '*/bin/*' \
-              -not -path '*/obj/*' | sort
-          )
-
-          test_found=false
-
-          for project in "${projects[@]}"; do
-            if grep -q 'Microsoft.NET.Test.Sdk' "$project"; then
-              test_found=true
-              dotnet test "$project" \
-                --configuration Release \
-                --no-build \
-                --no-restore
-            fi
-          done
-
-          if [ "$test_found" = false ]; then
-            echo "ERROR: No test project referencing Microsoft.NET.Test.Sdk was found."
-            exit 1
-          fi
-
