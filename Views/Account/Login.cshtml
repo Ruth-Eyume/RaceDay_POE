@@ -1,0 +1,92 @@
+﻿@model RaceDayMVC.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="auth-section">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+
+            <div class="col-lg-5 auth-intro">
+                <span class="section-label">WELCOME BACK</span>
+
+                <h1>Ready for your next <span>finish line?</span></h1>
+
+                <p>
+                    Sign in to your RaceDay account to continue your journey,
+                    discover events and keep track of your achievements.
+                </p>
+
+                <div class="auth-benefit">
+                    <i class="bi bi-trophy-fill"></i>
+                    <span>Your next achievement starts here.</span>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="auth-card">
+
+                    <div class="auth-card-icon">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+
+                    <h2>Welcome Back!</h2>
+                    <p class="auth-subtitle">Please enter your login details.</p>
+
+                    <form asp-controller="Account" asp-action="Login" method="post">
+
+                        <div asp-validation-summary="ModelOnly"
+                             class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Email Address</label>
+
+                            <div class="input-icon-wrapper">
+                                <i class="bi bi-envelope"></i>
+                                <input asp-for="Email"
+                                       class="form-control"
+                                       placeholder="Enter your email address" />
+                            </div>
+
+                            <span asp-validation-for="Email"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Password" class="form-label">Password</label>
+
+                            <div class="input-icon-wrapper">
+                                <i class="bi bi-lock"></i>
+                                <input asp-for="Password"
+                                       type="password"
+                                       class="form-control"
+                                       placeholder="Enter your password" />
+                            </div>
+
+                            <span asp-validation-for="Password"
+                                  class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-navy auth-submit">
+                            Sign In <i class="bi bi-arrow-right"></i>
+                        </button>
+
+                    </form>
+
+                    <div class="auth-switch">
+                        Don't have an account?
+                        <a asp-controller="Account" asp-action="Register">
+                            Create an account
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

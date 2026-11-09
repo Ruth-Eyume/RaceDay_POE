@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Participant Dashboard";
+}
+
+<section class="dashboard-section">
+    <div class="container">
+
+        <div class="dashboard-welcome">
+            <div>
+                <span class="section-label">PARTICIPANT SPACE</span>
+
+                <h1>
+                    Welcome back,
+                    <span>@Context.Session.GetString("FirstName")!</span>
+                </h1>
+
+                <p>
+                    Your next adventure is waiting. Discover events,
+                    manage your registrations and celebrate your achievements.
+                </p>
+            </div>
+
+            <div class="dashboard-welcome-icon">
+                <i class="bi bi-trophy-fill"></i>
+            </div>
+        </div>
+
+        <div class="row g-4 dashboard-stats">
+
+            <div class="col-md-4">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-icon pink-icon">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+
+                    <h3>My Registrations</h3>
+                    <p>View and manage the events you have registered for.</p>
+
+                    <a href="#" class="dashboard-link">
+                        View Registrations <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-icon navy-icon">
+                        <i class="bi bi-search"></i>
+                    </div>
+
+                    <h3>Discover Events</h3>
+                    <p>Explore upcoming running, walking and cycling events.</p>
+
+                    <a href="#" class="dashboard-link">
+                        Explore Events <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-icon pink-icon">
+                        <i class="bi bi-award"></i>
+                    </div>
+
+                    <h3>My Results</h3>
+                    <p>Keep track of your race results and achievements.</p>
+
+                    <a href="#" class="dashboard-link">
+                        View Results <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="dashboard-bottom">
+            <div>
+                <h3>Ready for your next challenge?</h3>
+                <p>Every achievement begins with taking part.</p>
+            </div>
+
+            <i class="bi bi-flag-fill"></i>
+        </div>
+
+    </div>
+</section>

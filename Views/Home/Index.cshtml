@@ -1,0 +1,189 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 hero-content">
+
+                <span class="hero-label">
+                    <i class="bi bi-stars"></i>
+                    YOUR JOURNEY STARTS HERE
+                </span>
+
+                <h1>
+                    Every race has a story.
+                    <span>Make yours count.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover exciting running, walking and cycling events.
+                    Register for your next challenge, track your progress
+                    and celebrate every achievement with RaceDay.
+                </p>
+
+                <div class="hero-buttons">
+                    <a asp-controller="Account"
+                       asp-action="Register"
+                       class="btn btn-navy btn-lg">
+                        Join RaceDay <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                    <a asp-controller="Account"
+                       asp-action="Login"
+                       class="btn btn-outline-navy btn-lg">
+                        Sign In
+                    </a>
+                </div>
+
+                <div class="hero-note">
+                    <i class="bi bi-heart-fill"></i>
+                    For every runner, rider and adventurer.
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+                <div class="hero-illustration">
+
+                    <div class="illustration-circle"></div>
+
+                    <div class="illustration-card">
+                        <div class="illustration-icon">
+                            <i class="bi bi-flag-fill"></i>
+                        </div>
+
+                        <span class="illustration-small">
+                            YOUR NEXT CHALLENGE
+                        </span>
+
+                        <h3>Ready, Set, Go!</h3>
+
+                        <p>
+                            Start something amazing today.
+                        </p>
+
+                        <div class="illustration-progress">
+                            <span></span>
+                        </div>
+
+                        <div class="illustration-bottom">
+                            <i class="bi bi-trophy-fill"></i>
+                            Every finish line matters.
+                        </div>
+                    </div>
+
+                    <div class="floating-icon floating-one">
+                        <i class="bi bi-bicycle"></i>
+                    </div>
+
+                    <div class="floating-icon floating-two">
+                        <i class="bi bi-person-walking"></i>
+                    </div>
+
+                    <div class="floating-icon floating-three">
+                        <i class="bi bi-trophy-fill"></i>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="intro-section">
+    <div class="container text-center">
+
+        <span class="section-label">DISCOVER RACEDAY</span>
+
+        <h2>
+            Find your next <span>finish line.</span>
+        </h2>
+
+        <p class="section-description">
+            Whether you are taking your first steps or preparing for
+            your next big race, RaceDay helps you find events and
+            take part in experiences that inspire you.
+        </p>
+
+    </div>
+</section>
+
+<!-- EVENT CATEGORIES -->
+<section class="categories-section">
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="category-card">
+                    <div class="category-icon pink-icon">
+                        <i class="bi bi-person-running"></i>
+                    </div>
+
+                    <h4>Running Events</h4>
+
+                    <p>
+                        From community fun runs to challenging marathons,
+                        find a race that motivates you.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="category-card">
+                    <div class="category-icon navy-icon">
+                        <i class="bi bi-bicycle"></i>
+                    </div>
+
+                    <h4>Cycling Events</h4>
+
+                    <p>
+                        Discover cycling challenges, explore new routes
+                        and push your limits.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="category-card">
+                    <div class="category-icon pink-icon">
+                        <i class="bi bi-person-walking"></i>
+                    </div>
+
+                    <h4>Walking Events</h4>
+
+                    <p>
+                        Get active, enjoy the outdoors and participate
+                        in exciting community walks.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta-section">
+    <div class="container text-center">
+
+        <h2>Ready for your next adventure?</h2>
+
+        <p>
+            Create your account and become part of the RaceDay community.
+        </p>
+
+        <a asp-controller="Account"
+           asp-action="Register"
+           class="btn btn-light btn-lg">
+            Get Started Today <i class="bi bi-arrow-right"></i>
+        </a>
+
+    </div>
+</section>

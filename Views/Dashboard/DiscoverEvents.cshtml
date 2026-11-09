@@ -1,0 +1,88 @@
+﻿@model List<RaceDayMVC.Models.EventViewModel>
+
+@{
+    ViewData["Title"] = "Discover Events";
+}
+
+<div class="container py-5">
+
+    <h2 class="mb-2">Discover Events</h2>
+
+    <p class="text-muted mb-4">
+        Find your next challenge and get ready to cross the finish line!
+    </p>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            @ViewBag.ErrorMessage
+        </div>
+    }
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="alert alert-info">
+            No events are currently available.
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card h-100 shadow-sm border-0">
+
+                        <div class="card-body">
+
+                            <span class="badge bg-primary mb-3">
+                                @item.Status
+                            </span>
+
+                            <h5 class="card-title">
+                                @item.EventName
+                            </h5>
+
+                            <p class="text-muted">
+                                @item.Description
+                            </p>
+
+                            <hr />
+
+                            <p>
+                                <strong>Location:</strong>
+                                @item.Location
+                            </p>
+
+                            <p>
+                                <strong>Event Date:</strong>
+                                @item.EventDate.ToString("dd MMMM yyyy")
+                            </p>
+
+                            <p>
+                                <strong>Registration Deadline:</strong>
+                                @item.RegistrationDeadline.ToString("dd MMMM yyyy")
+                            </p>
+
+                            <a asp-controller="Dashboard"
+                               asp-action="EventDetails"
+                               asp-route-id="@item.EventID"
+                               class="btn btn-outline-primary w-100">
+
+                                View Details
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    }
+
+</div>

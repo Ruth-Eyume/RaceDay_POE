@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Organiser Dashboard";
+}
+
+<section class="dashboard-section">
+    <div class="container">
+
+        <div class="dashboard-welcome">
+            <div>
+                <span class="section-label">ORGANISER SPACE</span>
+
+                <h1>
+                    Welcome back,
+                    <span>@Context.Session.GetString("FirstName")!</span>
+                </h1>
+
+                <p>
+                    Manage your events, organise registrations and
+                    keep your participants informed.
+                </p>
+            </div>
+
+            <div class="dashboard-welcome-icon">
+                <i class="bi bi-clipboard-data"></i>
+            </div>
+        </div>
+
+        <div class="row g-4 dashboard-stats">
+
+            <div class="col-md-4">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-icon pink-icon">
+                        <i class="bi bi-calendar-event"></i>
+                    </div>
+
+                    <h3>Manage Events</h3>
+                    <p>Create, update and manage your sporting events.</p>
+
+                    <a href="#" class="dashboard-link">
+                        Manage Events <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-icon navy-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <h3>Participants</h3>
+                    <p>View participants and manage event registrations.</p>
+
+                    <a href="#" class="dashboard-link">
+                        View Participants <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-icon pink-icon">
+                        <i class="bi bi-bar-chart"></i>
+                    </div>
+
+                    <h3>Event Results</h3>
+                    <p>Manage race results and review event performance.</p>
+
+                    <a href="#" class="dashboard-link">
+                        Manage Results <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="dashboard-bottom">
+            <div>
+                <h3>Make every event memorable.</h3>
+                <p>Great events start with great organisation.</p>
+            </div>
+
+            <i class="bi bi-trophy-fill"></i>
+        </div>
+
+    </div>
+</section>
